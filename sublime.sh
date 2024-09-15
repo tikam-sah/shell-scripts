@@ -1,45 +1,29 @@
 #!/bin/bash
 
-# Define the Sublime Text repository URL and the GPG key URL
-SUBLIME_REPO_URL="https://download.sublimetext.com/"
-GPG_KEY_URL="https://download.sublimetext.com/sublimehq-pub.gpg"
+# Update package list and install required dependencies
+echo "Updating package list and installing dependencies..."
+sudo apt update
+sudo apt install -y apt-transport-https ca-certificates wget
 
-# Function to check if a command exists
-command_exists() {
-    command -v "$1" &> /dev/null
-}
-
-# Update package list
-echo "Updating package list..."
-sudo apt-get update
-
-# Install wget if it's not already installed
-if ! command_exists wget; then
-    echo "Installing wget..."
-    sudo apt-get install -y wget
-fi
-
-# Install GPG key for the Sublime Text repository
+# Import Sublime Text GPG key
 echo "Adding Sublime Text GPG key..."
-wget -qO - "$GPG_KEY_URL" | sudo apt-key add -
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 
-# Add the Sublime Text repository
-echo "Adding Sublime Text repository..."
-echo "deb https://download.sublimetext.com/ apt/stable/ contrib" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+# Add the Sublime Text APT repository
+echo "Adding Sublime Text APT repository..."
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
-# Update package list again to include the Sublime Text repository
+# Update package list again to include the new repository
 echo "Updating package list..."
-sudo apt-get update
+sudo apt update
 
 # Install Sublime Text
 echo "Installing Sublime Text..."
-sudo apt-get install -y sublime-text
+sudo apt install -y sublime-text
 
-echo "Sublime Text installation completed."
+# Confirmation message
+echo "Sublime Text installation is complete!"
 
-# Launch Sublime Text (optional)
-read -p "Do you want to launch Sublime Text now? (y/n) " launch_sublime
-
-if [ "$launch_sublime" == "y" ]; then
-    sublime-text &
-fi
+# Optionally, you can open Sublime Text immediately
+# echo "Launching Sublime Text..."
+# sublime-text
