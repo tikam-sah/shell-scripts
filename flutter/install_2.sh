@@ -34,6 +34,10 @@ sudo mv extract/cmdline-tools ~/Android/Sdk/
 
 
 # Install Android command-line tools
+cd ~/Android/Sdk/cmdline-tools/
+mv bin/ latest/
+mv lib/ latest/
+
 cd ~/Android/Sdk/cmdline-tools/latest/bin
 ./sdkmanager --install "cmdline-tools;latest"
 
