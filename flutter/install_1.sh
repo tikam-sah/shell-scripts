@@ -7,6 +7,17 @@ echo_message() {
     echo "=================================================="
 }
 
+# Downloading Android Studio 
+wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.2.1.9/android-studio-2024.2.1.9-linux.tar.gz
+
+# Download Command Line tools 
+wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+
+# Download Flutter 
+wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.24.3-stable.tar.xz
+
+
+
 # Define the files to extract
 FILE1="android-studio-2024.2.1.9-linux.tar.gz"
 FILE2="flutter_linux_3.24.3-stable.tar.xz"
