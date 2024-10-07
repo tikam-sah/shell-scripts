@@ -7,14 +7,37 @@ echo_message() {
     echo "=================================================="
 }
 
-# Downloading Android Studio 
-wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.2.1.9/android-studio-2024.2.1.9-linux.tar.gz
+# Set URLs for downloads
+ANDROID_STUDIO_URL="https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.2.1.9/android-studio-2024.2.1.9-linux.tar.gz"
+COMMAND_LINE_TOOLS_URL="https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip"
+FLUTTER_URL="https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.24.3-stable.tar.xz"
 
-# Download Command Line tools 
-wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+# Download Android Studio
+echo "Downloading Android Studio..."
+wget "$ANDROID_STUDIO_URL" -O android-studio-linux.tar.gz
+if [ $? -ne 0 ]; then
+    echo "Failed to download Android Studio."
+    exit 1
+fi
 
-# Download Flutter 
-wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.24.3-stable.tar.xz
+# Download Command Line Tools
+echo "Downloading Command Line Tools..."
+wget "$COMMAND_LINE_TOOLS_URL" -O commandlinetools.zip
+if [ $? -ne 0 ]; then
+    echo "Failed to download Command Line Tools."
+    exit 1
+fi
+
+# Download Flutter
+echo "Downloading Flutter..."
+wget "$FLUTTER_URL" -O flutter_linux.tar.xz
+if [ $? -ne 0 ]; then
+    echo "Failed to download Flutter."
+    exit 1
+fi
+
+# After download process
+echo "Download completed! Now proceeding to extract files..."
 
 
 
