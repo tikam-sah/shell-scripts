@@ -50,6 +50,9 @@ sudo apt install nano
 # libgtk
 sudo apt install libgtk-3-dev
 
+# libmpv1
+sudo apt install libmpv1
+
 # Adding sdk path 
 echo export ANDROID_SDK_ROOT=~/Android/Sdk
 echo export PATH="$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin"
