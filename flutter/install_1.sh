@@ -42,9 +42,13 @@ echo "Download completed! Now proceeding to extract files..."
 
 
 # Define the files to extract
-FILE1="android-studio-2024.2.1.9-linux.tar.gz"
-FILE2="flutter_linux_3.24.3-stable.tar.xz"
-FILE3="commandlinetools-linux-11076708_latest.zip"
+FILE1="android-studio-linux.tar.gz"
+FILE2="flutter_linux.tar.xz"
+FILE3="commandlinetools.zip"
+
+#FILE1="android-studio-2024.2.1.9-linux.tar.gz"
+#FILE2="flutter_linux_3.24.3-stable.tar.xz"
+#FILE3="commandlinetools-linux-11076708_latest.zip"
 
 # Create directories for extracted files
 mkdir -p extract
