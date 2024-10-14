@@ -54,10 +54,10 @@ sudo apt install libgtk-3-dev
 sudo apt install libmpv1
 
 # Adding sdk path 
-echo export ANDROID_SDK_ROOT=~/Android/Sdk
-echo export PATH="$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin"
-echo  export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
-echo  export PATH="$PATH:$ANDROID_SDK_ROOT/tools"
+echo 'export ANDROID_SDK_ROOT=~/Android/Sdk' >> ~/.bashrc
+echo 'export PATH="$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin"' >> ~/.bashrc
+echo 'export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"'  >> ~/.bashrc
+echo 'export PATH="$PATH:$ANDROID_SDK_ROOT/tools"'  >> ~/.bashrc
 source ~/.bashrc
 
 # Accept Android licenses
