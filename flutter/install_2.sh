@@ -26,20 +26,18 @@ if ! grep -q 'export PATH="$PATH:/opt/flutter/bin"' ~/.bashrc; then
     echo "Flutter has been added to your PATH."
 fi
 
-# Move the extracted folder
-echo_message "Moving cmdline-tools to /opt..."
-sudo mv extract/cmdline-tools ~/Android/Sdk/
-
-#export PATH="$PATH:/opt/flutter/bin"
+# Move the extracted folder (tmp commented)
+echo_message "Moving cmdline-tools to /opt...  is ignored install manually via android stdio"
+#sudo mv extract/cmdline-tools ~/Android/Sdk/
 
 
-# Install Android command-line tools
-cd ~/Android/Sdk/cmdline-tools/
-mv bin/ latest/
-mv lib/ latest/
+# Install Android command-line tools (tmp commented)
+#cd ~/Android/Sdk/cmdline-tools/
+#mv bin/ latest/
+#mv lib/ latest/
 
-cd ~/Android/Sdk/cmdline-tools/latest/bin
-./sdkmanager --install "cmdline-tools;latest"
+#cd ~/Android/Sdk/cmdline-tools/latest/bin
+#./sdkmanager --install "cmdline-tools;latest"
 
 # Install required packages for Linux development
 sudo apt install -y clang cmake ninja-build pkg-config
@@ -53,11 +51,11 @@ sudo apt install libgtk-3-dev
 # libmpv1
 sudo apt install libmpv1
 
-# Adding sdk path 
+# Adding sdk path (tmp commented)
 echo 'export ANDROID_SDK_ROOT=~/Android/Sdk' >> ~/.bashrc
-echo 'export PATH="$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin"' >> ~/.bashrc
-echo 'export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"'  >> ~/.bashrc
-echo 'export PATH="$PATH:$ANDROID_SDK_ROOT/tools"'  >> ~/.bashrc
+#echo 'export PATH="$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin"' >> ~/.bashrc
+#echo 'export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"'  >> ~/.bashrc
+#echo 'export PATH="$PATH:$ANDROID_SDK_ROOT/tools"'  >> ~/.bashrc
 source ~/.bashrc
 
 # Accept Android licenses
