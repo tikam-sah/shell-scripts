@@ -94,6 +94,10 @@ sudo apt-get update -y && sudo apt-get upgrade -y
 echo "Installing required packages for flutter..."
 sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa
 
+# Install required packages for android
+echo "Install the following prerequisite packages for Android Studio"
+sudo apt-get install libc6:amd64 libstdc++6:amd64 lib32z1 libbz2-1.0:amd64
+
 echo "All done!"
 
 # Move the extracted folder
